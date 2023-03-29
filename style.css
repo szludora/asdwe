@@ -194,11 +194,25 @@ div h2 {
   border-radius: 50%;
   text-align: center;
   position: sticky;
+  transition: 2s all ease-in-out;
   right: 0;
   top: 100px;
+
 }
 
 .asd i {
   padding-top: 33px;
   color: rgb(249, 84, 111);
 }
+
+
+.kattintott {
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border-radius: 0;
+  transition: all 2s ease-in-out;
+  margin: 20px;
+  z-index: 2;
+}
+

@@ -14,7 +14,7 @@ export function div_keszit(lista, i) {
         txt += `<p class="${kulcs}">${kulcs}:&nbsp&nbsp ${lista[i][kulcs]}</p>`;
       }
     }
-    txt += `<img src='${lista[i].kep}'<br><br><button>Törlés</button></div>`;
+    txt += `<img src='${lista[i].kep}'<br><button class="kosar"><i class="fa fa-shopping-cart" style="font-size: 30px"></i></button><br><button>Törlés</button></div>`;
     
     return txt;
   }

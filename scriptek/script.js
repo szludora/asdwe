@@ -30,12 +30,14 @@ export function oldalOsszeallit() {
   urlap();
   gomb();
   rendezoGombok();
+  kiolvasKosar();
+  kosarGomb();
 }
 
 
 
 export function gomb() {
-  let gomb = document.querySelectorAll("button:not(.sort):not(.submit):not(.visszahiv)");
+  let gomb = document.querySelectorAll("button:not(.sort):not(.submit):not(.visszahiv):not(.kosar)");
   for (let i = 0; i < gomb.length; i++) {
     gomb[i].addEventListener("click", figyelmeztet);
   }
@@ -141,4 +143,28 @@ function rendezoGombok() {
   for (let i = 0; i < gombok.length; i++) {
     gombok[i].addEventListener("click", function() {rendezes(kutyaLista, gombok[i].classList[2], gombok[i].classList[1])});
   }
+}
+
+function kosarGomb(){
+  let kosarak = document.querySelectorAll(".kosar")
+  for (let i = 0; i < kosarak.length; i++) {
+    kosarak[i].addEventListener("click", function() {kosarhozAdas(i)})
+    
+  }
+}
+
+function kosarhozAdas(i){
+  let elem = kutyaLista[i]
+ localStorage.setItem(`${kutyaLista[i].nev}`, JSON.stringify(elem));
+ const segedLISTA = JSON.parse(localStorage.getItem(`${kutyaLista[i].nev}`));
+ let kosarIkon = document.querySelector(".asd")
+
+ kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> ${localStorage.length}`
+ console.log(localStorage)
+}
+ 
+function kiolvasKosar(){
+  let kosarIkon = document.querySelector(".asd")
+
+ kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> ${localStorage.length}`
 }

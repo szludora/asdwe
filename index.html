@@ -7,36 +7,41 @@
     <meta name="keywords" content="HTML, JavaScript, Dolgozat, Szorgalmi" />
     <meta name="author" content="Szlucska Dóra" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="scriptek/script.js" type="module"></script>
     <title>Szlucska Dóra</title>
   </head>
   <body>
     <header><h1>Kedvenc kutyáim</h1></header>
+    <div class="asd">
+      <i class="fa fa-shopping-cart" style="font-size: 30px"></i></div>
     <article></article>
     <aside></aside>
     <section></section>
-    <fieldset class="formazottDiv" style="margin: 50px auto auto;">
+    <fieldset class="formazottDiv" style="margin: 50px auto auto">
       <legend>Kutya hozzáadása</legend>
       <form>
         <label for="nev">Név: </label><br />
         <input type="text" id="nev" name="nev" /><br />
         <label for="fajta">Fajta: </label><br />
-        <input type="text" id="fajta" name="fajta" /><br>
+        <input type="text" id="fajta" name="fajta" /><br />
         <label for="kor">Kor: </label><br />
-        <input type="number" id="kor" name="kor" /><br /><br>
+        <input type="number" id="kor" name="kor" /><br /><br />
 
         <label for="szuka">Szuka</label>
         <input type="radio" id="szuka" name="nem" value="szuka" />
         <label for="kan">Kan</label>
-        <input type="radio" id="kan" name="nem" value="kan" /><br><br>
+        <input type="radio" id="kan" name="nem" value="kan" /><br /><br />
 
         <label for="marmagassag">Marmagasság: </label><br />
-        <input type="number" id="marmagassag" name="marmagassag" /><br /><br>
-        <label for="url">Kép (url):</label><br>
-        <input type="text"id="url" name="url"/><br /><br>
-        <input class="formazottGomb submit" type="button" value="Hozzáad">
+        <input type="number" id="marmagassag" name="marmagassag" /><br /><br />
+        <label for="url">Kép (url):</label><br />
+        <input type="text" id="url" name="url" /><br /><br />
+        <input class="formazottGomb submit" type="button" value="Hozzáad" />
       </form>
-      
     </fieldset>
     <footer>Copyright © 2023 Szlucska Dóra</footer>
   </body>

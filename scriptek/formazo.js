@@ -5,7 +5,7 @@ export function formazas() {
       gombok[i].classList.add("formazottGomb");
     }
   
-    let divek = document.querySelectorAll("div");
+    let divek = document.querySelectorAll("div:not(.asd)");
     for (let i = 0; i < divek.length; i++) {
       divek[i].classList.add("formazottDiv");
     }

@@ -186,3 +186,19 @@ div h2 {
   margin-bottom: 10px;
   font-size: 38px;
 }
+
+.asd {
+  background-color: rgba(255, 255, 255, 0.806);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  text-align: center;
+  position: sticky;
+  right: 0;
+  top: 100px;
+}
+
+.asd i {
+  padding-top: 33px;
+  color: rgb(249, 84, 111);
+}

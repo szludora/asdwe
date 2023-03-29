@@ -69,6 +69,7 @@ export function oldalOsszeallit() {
   kiolvasKosar();
   kosarGomb();
   kosarKatt();
+  // kosarbolTorloGomb()
 }
 
 export function gomb() {
@@ -200,46 +201,64 @@ function kosarhozAdas(i) {
   const segedLISTA = JSON.parse(localStorage.getItem(`${kutyaLista[i].nev}`));
   let kosarIkon = document.querySelector(".asd");
 
-  kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> ${localStorage.length}`;
-  console.log(localStorage);
+  kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i><p class="mennyiseg">${localStorage.length}</p>`;
 }
 
 function kiolvasKosar() {
   let kosarIkon = document.querySelector(".asd");
-  kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> ${localStorage.length}`;
+  kosarIkon.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> <p class="mennyiseg">${localStorage.length}</p>`;
 }
 
 function kosarKatt() {
-  let kosarGomb = document.querySelector(".asd");
-  kosarGomb.addEventListener("click", function(){
-    if (!kosarNyitva){
-      tartalomMegnez();
-      kosarNyitva = true;
-    }
-    else{
-      gombBezar();
-      kosarNyitva = false;
+  let kosarGomb = document.querySelector(".asd:not(.kosarTorles)");
+  kosarGomb.addEventListener("click", function () {
+    if (event.target.classList.contains("kosarTorles")) {
+      kosarbolTorol(event);
+    } else {
+      if (!kosarNyitva) {
+        tartalomMegnez();
+        kosarNyitva = true;
+      } else {
+        gombBezar();
+        kosarNyitva = false;
+      }
     }
   });
 }
-
-
 
 function tartalomMegnez() {
   let gomb = document.querySelector(".asd");
   let kulcsok = Object.keys(localStorage);
   gomb.classList.add("kattintott");
-  setTimeout(function() {
-  let txt = "";
-  for (var i = 0; i < localStorage.length; i++){
-    txt += `<p>${localStorage.key(i)}&nbsp&nbsp&nbsp&nbsp<button class="kosarTorles">Törlés</button></p>`;
-  }
-  gomb.innerHTML += txt;
-}, 1400);
+  setTimeout(function () {
+    let txt = "";
+    for (var i = 0; i < localStorage.length; i++) {
+      txt += `<p class="torles ${localStorage.key(i)}">${localStorage.key(
+        i
+      )}&nbsp&nbsp&nbsp&nbsp<button class="kosarTorles ${localStorage.key(
+        i
+      )}">Törlés</button></p>`;
+    }
+    gomb.innerHTML += txt;
+  }, 1400);
 }
 
-function gombBezar(){
+function gombBezar() {
   let gomb = document.querySelector(".asd");
-  gomb.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i> ${localStorage.length}`
-  gomb.classList.remove("kattintott")
+  gomb.innerHTML = `<i class="fa fa-shopping-cart" style="font-size: 30px"></i><p class="mennyiseg">${localStorage.length}</p>`;
+  gomb.classList.remove("kattintott");
+}
+
+function kosarbolTorol(event) {
+  let sorok = document.querySelectorAll(".asd p");
+  let kulcs = event.target.classList[1];
+  let mennyiseg = document.querySelector(".mennyiseg");
+
+  for (let i = 0; i < sorok.length; i++) {
+    if (sorok[i].classList[1] == kulcs) {
+      sorok[i].remove();
+    }
+  }
+  localStorage.removeItem(kulcs);
+  mennyiseg.innerHTML = `<p class="mennyiseg">${localStorage.length}</p>`;
 }

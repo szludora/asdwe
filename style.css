@@ -203,11 +203,12 @@ div h2 {
 .asd i {
   padding-top: 33px;
   color: rgb(249, 84, 111);
+  margin-bottom: 20px;
 }
 
 
 .kattintott {
-  height: 200px;
+  height: 250px;
   width: 200px;
   background-color: white;
   border-radius: 0;
@@ -216,3 +217,30 @@ div h2 {
   z-index: 2;
 }
 
+.kosarTorles{
+  border-width: 1px;
+  color: #fff;
+  border-color: #ffffff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: inset 0px 39px 0px -24px #e67a73;
+  text-shadow: inset 0px 1px 0px #b23e35;
+  background: #e4685d;
+  padding: 5px;
+  position: absolute;
+  right: 40px;
+
+}
+
+.torles {
+  text-align: left;
+  margin: 0 0 10px 50px;
+}
+
+.mennyiseg {
+  display: inline;
+  font-size: 24px;
+  margin-left: 10px;
+}

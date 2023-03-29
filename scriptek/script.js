@@ -133,7 +133,7 @@ as.innerHTML+=`<button class="visszahiv ${nev}">${nev}</button>`
 
 function urlap() {
   let gomb = document.querySelector(".submit");
-  gomb.addEventListener("click", function(){urlapSubmit(kutyaLista, alapKep)});
+  gomb.addEventListener("click", function(){urlapSubmit(kutyaLista, alapKep, event)});
 }
 
 function rendezoGombok() {

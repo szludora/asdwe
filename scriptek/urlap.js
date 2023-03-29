@@ -2,6 +2,7 @@ import {kiir} from "./keszito.js"
 import {gomb, oldalOsszeallit} from "./script.js"
  
 export function urlapSubmit(lista, alapKep, event) {
+  event.preventDefault();
     let kutya = {
       kep: document.querySelector("input#url").value,
       nev: document.querySelector("input#nev").value,
@@ -19,7 +20,7 @@ export function urlapSubmit(lista, alapKep, event) {
       kutya["nem"] = "kan";
     }
     lista.push(kutya);
+
     kiir(lista, lista.length - 1);
     gomb();
-    event.preventDefault();
   }
